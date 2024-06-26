@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rental_car_app/core/core.dart';
 import 'package:rental_car_app/domain/car/entity/car.dart';
+import 'package:rental_car_app/presentation/car_detail/widgets/tab_map.dart';
 import 'package:rental_car_app/presentation/shared/shared.dart';
 
 class CarDetailPage extends StatelessWidget {
@@ -26,8 +27,10 @@ class CarDetailPage extends StatelessWidget {
                 car: Car(
                     model: car.model,
                     distance: car.distance,
-                    fullCapacity: car.fullCapacity,
-                    priceHoure: 34)),
+                    fuelCapacity: car.fuelCapacity,
+                    pricePerHour: car.pricePerHour,
+                    diagonalImage: car.diagonalImage,
+                    edgeImage: car.edgeImage)),
             const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -72,59 +75,41 @@ class CarDetailPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(width: 20),
-                  Expanded(
-                    child: Container(
-                      height: 170,
-                      decoration: BoxDecoration(
-                        color: ConstantsColors.carCardBackgroundColor,
-                        borderRadius: BorderRadius.circular(20),
-                        image: const DecorationImage(
-                          image: AssetImage('assets/icons/maps.png'),
-                          fit: BoxFit.cover,
-                        ),
-                        boxShadow: const [
-                          BoxShadow(
-                              color: Colors.black12,
-                              blurRadius: 10,
-                              spreadRadius: 5)
-                        ],
-                      ),
-                    ),
-                  )
+                  TabMap(car: car)
                 ],
               ),
             ),
-            Container(
-              padding: const EdgeInsets.all(20),
-              child: Column(
-                children: [
-                  MoreCard(
-                      car: Car(
-                          model: '${car.model}-1',
-                          distance: car.distance + 100,
-                          fullCapacity: car.fullCapacity + 100,
-                          priceHoure: 34)),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  MoreCard(
-                      car: Car(
-                          model: '${car.model}-2',
-                          distance: car.distance + 200,
-                          fullCapacity: car.fullCapacity + 200,
-                          priceHoure: 34)),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  MoreCard(
-                      car: Car(
-                          model: '${car.model}-3',
-                          distance: car.distance + 300,
-                          fullCapacity: car.fullCapacity + 300,
-                          priceHoure: 34)),
-                ],
-              ),
-            )
+            // Container(
+            //   padding: const EdgeInsets.all(20),
+            //   child: Column(
+            //     children: [
+            //       MoreCard(
+            //           car: Car(
+            //               model: '${car.model}-1',
+            //               distance: car.distance + 100,
+            //               fuelCapacity: car.fuelCapacity + 100,
+            //               pricePerHour: 34)),
+            //       const SizedBox(
+            //         height: 5,
+            //       ),
+            //       MoreCard(
+            //           car: Car(
+            //               model: '${car.model}-2',
+            //               distance: car.distance + 200,
+            //               fuelCapacity: car.fuelCapacity + 200,
+            //               pricePerHour: 34)),
+            //       const SizedBox(
+            //         height: 5,
+            //       ),
+            //       MoreCard(
+            //           car: Car(
+            //               model: '${car.model}-3',
+            //               distance: car.distance + 300,
+            //               fuelCapacity: car.fuelCapacity + 300,
+            //               pricePerHour: 34)),
+            //     ],
+            //   ),
+            // )
           ],
         ));
   }

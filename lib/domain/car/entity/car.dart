@@ -1,13 +1,17 @@
 class Car {
   final String model;
+  final String diagonalImage;
+  final String edgeImage;
   final double distance;
-  final double fullCapacity;
-  final double priceHoure;
+  final double fuelCapacity;
+  final double pricePerHour;
 
   Car({
     required this.model,
     required this.distance,
-    required this.fullCapacity,
-    required this.priceHoure,
+    required this.fuelCapacity,
+    required this.pricePerHour,
+    required this.diagonalImage,
+    required this.edgeImage,
   });
 }

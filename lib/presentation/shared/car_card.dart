@@ -15,15 +15,19 @@ class CarCard extends StatelessWidget {
           color: Colors.white,
           borderRadius: BorderRadius.circular(20),
           boxShadow: const [
-            BoxShadow(color: Colors.black12, blurRadius: 10, spreadRadius: 5)
+            BoxShadow(
+                color: Colors.black12,
+                blurRadius: 10,
+                offset: Offset(0, 7),
+                spreadRadius: 5)
           ],
         ),
         margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
         padding: const EdgeInsets.all(20),
         child: Column(
           children: [
-            Image.asset(
-              'assets/images/cadillag-lado.png',
+            Image.network(
+              car.edgeImage,
               height: 120,
             ),
             Text(
@@ -42,10 +46,10 @@ class CarCard extends StatelessWidget {
                     Image.asset('assets/icons/gps.png'),
                     Text('${car.distance.toStringAsFixed(0)}km'),
                     Image.asset('assets/icons/pump.png'),
-                    Text('${car.fullCapacity.toStringAsFixed(0)}L')
+                    Text('${car.fuelCapacity.toStringAsFixed(0)}L')
                   ],
                 ),
-                Text('\$${car.priceHoure.toStringAsFixed(0)}/h',
+                Text('\$${car.pricePerHour.toStringAsFixed(0)}/h',
                     style: const TextStyle(fontSize: 16))
               ],
             )

@@ -12,10 +12,21 @@ final GoRouter appRouter = GoRouter(routes: [
     builder: (context, state) => CarListPage(),
   ),
   GoRoute(
+    path: '/mapDetailPage',
+    builder: (context, state) {
+      final car = state.extra as Car;
+      return MapDetailPage(
+        car: car,
+      );
+    },
+  ),
+  GoRoute(
     path: '/carDetailPage',
     builder: (context, state) {
       final car = state.extra as Car;
-      return CarDetailPage(car: car,);
+      return CarDetailPage(
+        car: car,
+      );
     },
   ),
 ]);

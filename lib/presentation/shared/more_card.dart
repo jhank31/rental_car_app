@@ -59,7 +59,7 @@ class MoreCard extends StatelessWidget {
                   const SizedBox(
                     width: 5,
                   ),
-                  Text('${car.fullCapacity.toString()}km',
+                  Text('${car.fuelCapacity.toString()}km',
                       style: const TextStyle(
                         color: Colors.white,
                         fontSize: 14,

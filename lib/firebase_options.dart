@@ -65,4 +65,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'new-proyect-car-rent-app.appspot.com',
     iosBundleId: 'com.example.rentalCarApp',
   );
+
 }
